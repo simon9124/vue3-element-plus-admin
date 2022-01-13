@@ -1,26 +1,51 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <div>
+    <el-table v-loading.fullscreen.lock="loading"
+              element-loading-background="rgba(0, 0, 0, 0.7)"
+              :data="dataList">
+      <el-table-column prop="date"
+                       label="Date"
+                       width="180" />
+      <el-table-column prop="name"
+                       label="Name"
+                       width="180" />
+      <el-table-column prop="address"
+                       label="Address" />
+    </el-table>
+  </div> -->
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {
+  reactive,
+  onMounted,
+} from 'vue'
+/* api */
+import { getDataList } from "@/api/data"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'app',
+  setup () {
+    const state = reactive({
+      dataList: [],
+      loading: false
+    })
+    onMounted(async () => {
+      state.loading = true
+      const dataList = (await getDataList()).data.dataList
+      // console.log(dataList);
+      state.dataList = dataList
+      state.loading = false
+    })
+    return state
+  },
 }
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
 }
 </style>

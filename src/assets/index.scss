@@ -1,0 +1,87 @@
+.el-table {
+    .el-table__row {
+        td {
+            cursor: pointer;
+            height: 50px;
+            padding: 0;
+        }
+    }
+
+    .cell {
+        padding: 0;
+
+        input {
+            padding: 0;
+        }
+
+        &-block {
+            min-height: 24px;
+            line-height: 24px;
+        }
+    }
+
+    .el-table__row:nth-child(2) td.el-table_1_column_1,
+    .el-table__row:nth-child(2) td.el-table_1_column_2,
+    .el-table__row:nth-child(2) td.el-table_1_column_3 {
+        background: #ffebf0;
+    }
+
+    .el-table__row:nth-child(3) td.el-table_1_column_1,
+    .el-table__row:nth-child(3) td.el-table_1_column_2,
+    .el-table__row:nth-child(3) td.el-table_1_column_3,
+    .el-table__row:nth-child(4) td.el-table_1_column_1,
+    .el-table__row:nth-child(4) td.el-table_1_column_2,
+    .el-table__row:nth-child(4) td.el-table_1_column_3 {
+        background: #fffcf3;
+    }
+
+    .el-table__row:nth-child(1) td.el-table_1_column_1:before,
+    .el-table__row:nth-child(2) td.el-table_1_column_1:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-top: 10px solid #f58e93;
+        border-left: 20px solid #f58e93;
+        border-right: 20px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .el-table__row:nth-child(1) td.el-table_1_column_1:after,
+    .el-table__row:nth-child(2) td.el-table_1_column_1:after {
+        content: "财";
+        position: absolute;
+        font-size: 12px;
+        top: 0px;
+        left: 5px;
+    }
+
+    .el-table__row:nth-child(3) td.el-table_1_column_1:before,
+    .el-table__row:nth-child(4) td.el-table_1_column_1:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-top: 10px solid #feeac5;
+        border-left: 20px solid #feeac5;
+        border-right: 20px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .el-table__row:nth-child(3) td.el-table_1_column_1:after,
+    .el-table__row:nth-child(4) td.el-table_1_column_1:after {
+        content: "预";
+        position: absolute;
+        font-size: 12px;
+        top: 0px;
+        left: 5px;
+    }
+}
+
+.el-table--border .el-table__cell:first-child .cell {
+    padding: 0
+}

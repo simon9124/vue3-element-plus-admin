@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
+import router from './router'
 
-createApp(App).mount('#app')
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import "@/assets/index.scss";
+
+require('@/mock')
+
+createApp(App).use(router).use(ElementPlus).mount('#app')
