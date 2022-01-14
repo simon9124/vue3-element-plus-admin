@@ -19,7 +19,7 @@ let costList = ref([]);
 onMounted(async () => {
   // 获取表格数据
   costList.value = (await getCostList()).data.costList;
-  // console.log(costList.value);
+  console.log(costList.value);
 });
 
 // methods
